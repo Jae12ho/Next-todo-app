@@ -11,6 +11,10 @@ type Props = {
     handleDelete: (id:number) => void;
 }
 
+// 컴포넌트를 React.memo로 감쌀 경우,
+// props의 내용이 변하지 않는 한 해당 컴포넌트를 재렌더링 하지 않음.
+// 만약 props가 이전과 다르지 않은데 재렌더링 하면 자원 낭비임.
+// 따라서 여러 데이터를 props로 받아서 한 번에 보여줘야 하는 컴포넌트에 React.memo를 사용하면 매~우 좋음.
 export default React.memo(function Item({ data, handleDelete }:Props) {
 
     return (

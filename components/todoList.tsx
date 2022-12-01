@@ -9,7 +9,7 @@ type TodoData = {
 }
 // todoData의 타입을 지정해줌.
 
-export default React.memo(function TodoList() {
+export default function TodoList() {
     const [todoData, setTodoData] = useState<TodoData[]>([]);
     const [value, setValue] = useState<string>("");
 
@@ -83,4 +83,4 @@ export default React.memo(function TodoList() {
             <Form value={value} setValue={setValue} handleSubmit={handleSubmit} />
         </div>
     )
-})
+}
