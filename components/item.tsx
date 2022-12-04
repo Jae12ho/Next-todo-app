@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React, { useState, Dispatch, SetStateAction, useCallback, useEffect } from "react";
 
 type TodoData = {
@@ -59,7 +60,9 @@ export default React.memo(function Item({ data, todoData, setTodoData }:Props) {
         <div className="w-full h-10 flex justify-between items-center border rounded-md p-2 my-2 shadow-sm">
             {
                 !isEdit && (
-                    <p className="text-gray-600 text-sm h-[20px] w-9/12 overflow-hidden">{data.content}</p>
+                    <Link href={"/" + data.id} className="text-gray-600 text-sm h-[20px] w-9/12">
+                        <p className="text-gray-600 text-sm h-[20px] w-9/12 overflow-hidden">{data.content}</p>
+                    </Link>
                 )
             }
             {
